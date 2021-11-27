@@ -3,8 +3,6 @@ site_name: Quick References
 nav:
   - Home:
     - Index: index.md
-  - Git version:
-    - Getting Started: git-version/index.md
   - Python:
     - Home: python/index.md
     - Beautiful Soap: python/beautiful-soap.md
@@ -19,6 +17,10 @@ nav:
     - Regular expressions: python/regular-expression.md
     - Strings: python/string.md
     - Mental Game: python/the-mental-game-of-python.md
+  - Linux:
+    - Getting Started: linux/index.md
+  - Git version:
+    - Getting Started: git-version/index.md
   - Others: others/index.md
 
 
