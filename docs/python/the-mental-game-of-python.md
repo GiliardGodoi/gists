@@ -1,13 +1,20 @@
-# The Mental Game of Python 
+# The Mental Game of Python
 
-By Raymond Hettinger. PyBay 2019. Link Video: https://youtu.be/UANN2Eu6ZnM
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UANN2Eu6ZnM"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+  </iframe>
+
+By Raymond Hettinger at PyBay 2019.
 
 ## Strategies to Python Development
 
 Strategies:
 
   - Chunking and Aliasing
-  - Solve a related but simpler problem 
+  - Solve a related but simpler problem
   - Incremental development
   - Build classes independently and let inheritance discover itself
   - Repeat tasks manually until patterns emerge, the move to a function. Continue to generalize as needed.

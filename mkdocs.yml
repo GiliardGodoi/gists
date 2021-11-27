@@ -1,5 +1,29 @@
 site_name: Quick References
 
+nav:
+  - Home:
+    - Index: index.md
+  - Python:
+    - Home: python/index.md
+    - Beautiful Soap: python/beautiful-soap.md
+    - Conda: python/conda.md
+    - Decorators: python/decorator.md
+    - Functions: python/functions.md
+    - Json: python/json.md
+    - Jupyter: python/jupyter.md
+    - Pickle: python/pickle.md
+    - Pytest: python/pytest.md
+    - Random: python/random.md
+    - Regular expressions: python/regular-expression.md
+    - Strings: python/string.md
+    - Mental Game: python/the-mental-game-of-python.md
+  - Linux:
+    - Getting Started: linux/index.md
+  - Git version:
+    - Getting Started: git-version/index.md
+  - Others: others/index.md
+
+
 theme:
   name: material
   features:
