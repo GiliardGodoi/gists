@@ -15,4 +15,4 @@ A quick reference through Python.
 9. [Random Module](random.md)
 10. [Regular Expressions](regular-expression.md)
 11. [String Module](string.md)
-12. [The Mental Game of Python](The_Mental_Game_of_Python.md)
+12. [The Mental Game of Python](the-mental-game-of-python.md)
