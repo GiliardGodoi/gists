@@ -19,6 +19,9 @@ nav:
     - Mental Game: python/the-mental-game-of-python.md
   - Linux:
     - Getting Started: linux/index.md
+    - Directories: linux/directories.md
+    - Processes: linux/process.md
+    - SSH: linux/ssh.md
   - Git version:
     - Getting Started: git-version/index.md
   - Others: others/index.md
