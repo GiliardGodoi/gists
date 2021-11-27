@@ -383,10 +383,10 @@ Renomear de dentro:
 Renomear de fora (supondo que o branch atual seja o *master*, por exemplo)
 
     git branch -m old-name new-name
-    
+
 #### Renomear um branch remoto
 
-Não é possível renomear um branch remoto diretamente. 
+Não é possível renomear um branch remoto diretamente.
 O que se faz é renomear o branch localmente e substituir no repositório remoto.
 A maneira mais rápida é:
 
