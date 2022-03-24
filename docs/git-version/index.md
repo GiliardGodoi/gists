@@ -290,8 +290,8 @@ git log --author= ...
 ```
 
 ## Stash
-
-Para alternar entre branches, é necessário comitar as alterações do branch atual para permitir a troca. Quando, por alguma razão, não é interessante realizar um comite das alterações atuais, podemos criar um *stash*.
+Para alternar entre branches, é necessário comitar as alterações do branch atual para permitir a troca.
+Quando, por alguma razão, não é interessante realizar um comite das alterações atuais, podemos criar um *stash*.
 
 Um *stash* é como se fosse um branch temporário que contém apenas as alterações não comitadas. Os principais comandos dessa funcionalidade são:
 
