@@ -4,16 +4,6 @@ Git é uma conhecida ferramenta para versionamento de código.
 
 A documentação oficial pode ser encontrada em: [Git - Reference](https://www.git-scm.com/docs)
 
-## Indice
-1. [Repositório](#repositório)
-	1. [Repositório Local](#repositório-local)
-	2. [Repositório Remoto](#repositório-remoto)
-2. [Visualizar Histórico](#visualizar-histórico)
-3. [Stash](#stash)
-4. [Obter Ajuda](#Obter-ajuda)
-5. [Configurações do Git](#Configurações-do-Git)
-6. [Sobre](#Sobre)
-
 ## Introdução
 ...
 
@@ -62,7 +52,7 @@ git meu-arquivo.txt
 git arquivo1.txt arquivo2.txt
 ```
 
-- Importante: quando uma mensagem não é informada pelo parâmetro `-m` o git irá abrir o editor de texto definido nas configurações.
+> Importante: quando uma mensagem não é informada pelo parâmetro `-m` o git irá abrir o editor de texto definido nas configurações.
 
 Comitar arquivos que já estão sendo monitorados, sem precisar adicionar na área de *staged*
 ```
@@ -150,7 +140,7 @@ git push --set-upstream origin master
 ```
 ou
 ```
-git push -u origin master
+git push -u origin main
 ```
 
 Enviando mudanças para um repositório remoto:
@@ -206,6 +196,7 @@ git branch -m old-branch-name new-branch-name
 ```
 
 #### Branches em repositórios remotos
+
 Baixar branch de um repositório remoto
 ```
 git checkout -b bug-142 origin/bug-142
@@ -227,7 +218,8 @@ git push origin bug-145 --delete
 ```
 
 Renomear branch de repositório remoto:
-- Não é possível renomear um repositório remoto diretamente. Porém, pode-se substituir o branch no reposiório remoto utilizando a seguinte sequência de comandos:
+
+> Não é possível renomear um repositório remoto diretamente. Porém, pode-se substituir o branch no reposiório remoto utilizando a seguinte sequência de comandos:
 ```
 git checkout old-name
 git branch -m new-name
@@ -298,6 +290,7 @@ git log --author= ...
 ```
 
 ## Stash
+
 Para alternar entre branches, é necessário comitar as alterações do branch atual para permitir a troca. Quando, por alguma razão, não é interessante realizar um comite das alterações atuais, podemos criar um *stash*.
 
 Um *stash* é como se fosse um branch temporário que contém apenas as alterações não comitadas. Os principais comandos dessa funcionalidade são:
@@ -333,9 +326,11 @@ Apagar um stash:
 Apagar um stash específico:
 
 ## Merge
+...
 
 ## Rebasing
 ...
+
 ## Reescrevendo o histórico (danger zone)
 ...
 
@@ -382,6 +377,7 @@ Listar configurações:
 ```
 git config --list
 ```
+---
 
 ## Sobre
 Algumas informações importantes que não estão diretamente relacionadas ao conteúdo.
@@ -396,7 +392,9 @@ Os princípios para organizar essas notas são:
 ### Inserindo uma entrada
 Para inserir uma nota, utilize o seguinte padrão:
 
+
 Texto explicativo
 ```
-git
+git <command>
 ```
+
