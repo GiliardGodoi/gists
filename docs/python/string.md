@@ -1,13 +1,28 @@
-# Anotações sobre métodos em string
+# Strings
+
+Strings são tantos objetos built-in como também existe um módulo `string`.
+```python
+import string
+```
+
+Documentação oficial:
+- [string module](https://docs.python.org/3/library/string.html)
 
 ## Indexing ans Slice
 
+Indexing
 ```python
-s[:]
-
+s = 'hello world'
+s[1]
+```
+Slicing
+```python
 s[start: end : step]
+```
 
-s[::-1] reverte um string
+Para reverter uma string:
+```python
+s[::-1]
 ```
 
 ## Operadores
@@ -23,10 +38,22 @@ foo * 5
 
 ## Built-in functions
 
-- chr() converte um inteiro em caracter
-- ord() converte um caracter em um inteiro
-- len()
-- str()
+Converte um inteiro em um caracter
+```python
+chr(90)
+```
+Converte um caracter em um inteiro:
+```python
+chr('Z')
+```
+Tamanho de uma string
+```python
+len('hello world')
+```
+Converte um objeto em uma string correspondente. Ver também `__str__`:
+```python
+str(90) # '90'
+```
 
 ## Interpolação
 
@@ -38,7 +65,7 @@ prod = n * m
 f'The product of {n} and {m} is {prod}'
 ```
 
-## Case conversion
+## Case
 
 ```python
 foo.capitalize()
@@ -141,6 +168,52 @@ bytes(<string>, <encoding>)
 b = bytes('foo.bar', 'utf8)
 
 bytes(<size>)
+```
+
+## Constantes interessantes do modulo `string`
+
+Alfabeto ASCII
+```python
+string.ascii_letters
+
+string.ascii_lowercase
+# 'abcdefghijklmnopqrstuvwxyz'
+
+string.ascii_uppercase
+# 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+```
+
+Números:
+```python
+string.digits
+# '0123456789'
+```
+
+Pontuação:
+```python
+string.punctuation
+# !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
+Outras bases numéricas:
+```python
+string.hexdigits
+# '0123456789abcdefABCDEF'.
+
+string.octdigits
+# '01234567'
+```
+
+ASCII caracteres considerados espaços em branco:
+```python
+string.whitespace
+# ' \t\n\r\x0b\x0c'
+```
+
+## Formatting
+
+```python
+from string import Formatter
 ```
 
 ## References

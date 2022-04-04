@@ -1,6 +1,9 @@
 # Python
 
-A quick reference through Python.
+Apenas um guia rápido.
+
+Documentação oficial do `python`:
+- [The Python Standard Library](https://docs.python.org/3/library/index.html#the-python-standard-library)
 
 ## Indice
 

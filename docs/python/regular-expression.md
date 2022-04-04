@@ -1,130 +1,289 @@
-# Expressão regulares
+# Regular expression
 
-Meta caracteres:
-''' . ^ $ * + ? { } [ ] \ | ( ) '''
-
-[ ] define um conjunto de caracteres. Exemplos [abc] [a-c] [0-9]. Metacaracteres dentro de um conjunto são tomados como caracteres normais. Exceção: ^
-
-^ indica negação ou complemento. Por exemplo, [^5] encontra qualquer caracter exceto 5.
-
-\ backslash. Caracter de escape. Pode representar conjuntos predefinidos, quando seguido por uma letra.
-
-\d equivale a [0-9]
-
-\D equivale a [^0-9]
-
-\s equivale a [\t\n\r\f\v]
-
-\S equivale a [^\t\n\r\f\v] white space character
-
-\w equivale a [a-zA-Z0-9_]
-
-\W equivale a [^a-zA-Z0-9_]
-
-Pode ser incluidas dentro de uma classe, por exemplo, [\s,.]
-
-Caracter especial . corresponde qualquer caracter exceto new line \n re.DOTALL
-
-## Repeating Things
-
-\* equivale a 0 (zero) ou mais repetições de uma classe. Equivalente a {0,}
-
-\+ equivale a 1 ou mais repetições. Equivalente a {1,}
-
-? equivale a 0 ou 1 repetições. Equivalente a {0,1}
-
-{m,n} minimo de m, e máximo n repetições
-
-## Compiling Regular Expressions
-
+```python
 import re
-p = re.compile('ab*')
+```
 
-re.IGNORECASE i
+Documentação oficial:
+- [re module documentation](https://docs.python.org/3/library/re.html)
 
-re.GLOBAL g
+See also:
+- [re : How To](https://docs.python.org/3/howto/regex.html#regex-howto)
+- [Wikipedia: Regular expression](https://en.wikipedia.org/wiki/Regular_expression)
+- [Untitled Pattern](https://regexr.com/)
+
+## Meta caracteres:
+
+> ''' . ^ $ * + ? { } [ ] \ | ( ) '''
+
+- `[ ]` (conjunto) define um conjunto de caracteres. Exemplos [abc] [a-c] [0-9]. Metacaracteres dentro de um conjunto são tomados como caracteres normais. Ver: `[^ ]`;
+
+- `( )` (grupo) define um grupo;
+
+- `[^ ]` (negação) indica negação, exceção ou complemento. Por exemplo, `[^5]` encontra qualquer caracter exceto 5;
+
+- `\` (backslash) ou escape. Pode representar conjuntos predefinidos, quando seguido por uma letra;
+
+- `.` (ponto) corresponde a qualquer caractere, exceto new line `\n`. Corresponde a `re.DOTALL`;
+
+- `^` (inicio) identifica um padrão no início da string.
+
+- `$` (final) identifica um padrão no final da string.
+
+- `|` (ou... ou...) expressa uma alternativa
+
+## Caracteres especiais
+
+- `\n` : new line
+- `\t` : tab space
+- `\r` :
+- `\f` :
+- `\v` :
+
+## Conjuntos pré-definidos
+
+- `\d` equivale a `[0-9]`
+
+- `\D` equivale a `[^0-9]`
+
+- `\s` equivale a `[\t\n\r\f\v]`
+
+- `\S` equivale a `[^\t\n\r\f\v]` white space character
+
+- `\w` equivale a `[a-zA-Z0-9_]`
+
+- `\W` equivale a `[^a-zA-Z0-9_]`
+
+Podem ser incluídos dentro de uma classe ou conjunto, por exemplo, [\s,.]
+
+## Indicando repetições
+
+- `{m, n}` minímo de `m` e máximo de `n` repetições.
+
+- `*` equivale a zero ou mais repetições de uma classe. Equivalente a `{0,}`
+
+- `+` equivale a 1 ou mais repetições, isto é, `{1,}`
+
+- `?` equivale a 0 ou 1 repetições:  `{0,1}`
+
+- `{n}` exatamente `n` repetições
 
 ## Module-Level Functions
 
+Compile uma padrão em um objeto que pode ser reusado.
+```python
 re.compile(*pattern, flags=0*)
+```
 
-Flags could be:
-  
-    re.ASCII or re.A
-    re.DEBUG -> display debug information
+Flags
+```python
+    re.ASCII      or re.A
+    re.UNICODE
     re.IGNORECASE or re.I
-    re.LOCALE
-    re.MULTILINE or. re.M
-    re.DOTALL or re.S
-    re.VERBOSE or re.X
-  
-re.match(*str_pattern, string, flags=0*)
+    re.MULTILINE  or re.M
+    re.DOTALL     or re.S
+    re.VERBOSE    or re.X
+    re.LOCALE  #
+    re.DEBUG   # display debug information
+```
+> É possível combinar flags com o operador `|`
 
-re.fullmatch(*str_pattern, string, flags=0*) -> return if matches the whole string
+```python
+re.compile(pattern, flags=0)
+```
 
-re.search(*str_pattern, string, flags=0*) -> return a match object for the first ocurrence
+Verifica toda a string por uma correspondência. Retorna um objeto match para a primeira ocorrência. Retorna um objeto `match`.
+```python
+re.search(str_pattern, string, flags=0)
+```
 
-re.split(*pattern, string, maxsplit=0, flags=0*) -> like str split
+Verifica o início da string por uma correspondência. Retorna um objeto `match`.
+```python
+re.match(str_pattern, string, flags=0)
+```
 
-re.findall(*pattern*, *string*, *flags=0*) -> return a list of strings
+Verifica se toda a string corresponde ao padrão desejado. Retorna um objeto `match`.
+```python
+re.fullmatch(str_pattern, string, flags=0)
+```
 
-re.finditer(*pattern*, *string*, , *flags=0*) -> return a iterator
+Divide uma `string` de acordo com o padrão desejado:
+```python
+re.split(pattern, string, maxsplit=0, flags=0)
+```
 
-re.sub(*pattern, repl, string, count=0, flags=0*)
+Retorna uma lista de palavras que correspondem ao padrão desejado:
+```python
+re.findall(pattern, string, flags=0)
+```
 
-re.purge() -> clear the regular expression cache <(0).(0)>
+Retornar um objeto iterável com os matches da string:
+```python
+re.finditer(pattern, string, , flags=0)
+```
 
-## Pattern Object
+Substituir um padrão por uma outra expressão em uma string.
+```python
+re.sub(pattern, repl, string, count=0, flags=0)
+```
+Onde:
+- `pattern` pode ser uma string ou um Pattern Object
+- `repl` pode ser uma nova string ou uma função
+- `string` é a string onde será feita a substituição
+- `count` é o número máximo de substituições
 
-    pattern = re.compile("d")
-    pattern.search('dog')
-    
-Pattern.search(*string [, pos[, endpos]]*)
+Se `repl` é uma função, ela recebe um *match object*:
+```python
+>>> def dashrepl(matchobj):
+...     if matchobj.group(0) == '-': return ' '
+...     else: return '-'
 
-Pattern.match(*string [, pos[, endpos]]*)
+>>> re.sub('-{1,2}', dashrepl, 'pro----gram-files')
+'pro--gram files'
 
-Pattern.fullmatch(*string [, pos[, endpos]]*) (>3.4)
+>>> re.sub(r'\sAND\s', # pattern
+            ' & ',     # repl
+            'Baked Beans And Spam',  # string
+            flags=re.IGNORECASE)
+'Baked Beans & Spam'
+```
 
-Pattern.split(*string, maxsplit=0*)
+Já `re.subn` perfoma a mesma operação que `re.sub` porém returna uma tupla indicando a nova string e o número de substituições: `(new_string, number_of_subs_made)`
+```python
+re.subn(pattern, repl, string, count=0, flags=0)
+```
 
-Pattern.findall(*string [, pos[, endpos]]*)
+Adiciona `\` (*backslash*) para caracteres especiais:
+```python
+re.escape('https://www.python.org')
+# https://www\.python\.org
+```
 
-Pattern.finditer(*string [, pos[, endpos]]*)
+Limpar o cache de expressões regulares. Por que eu iria fazer isso?
+```python
+re.purge()
+```
 
-Pattern.sub(*repl, string, count=0*)
+## Padrão (*Pattern object*)
 
-Pattern.subn(*repl, string, count=0*) -> return a tuple like (new_string, number_of_subs_made)
+Compila uma expressão regular em um objeto que pode ser reusado.
+```python
+pattern = re.compile("d")
+pattern.search('dog')
+```
+Verifica toda a string e retorna a primeira ocorrência.
+```python
+Pattern.search(string [, pos[, endpos]])
+```
+Onde:
+- `pos` indica o indice da posição inicial
 
+Verifica se o início da (sub)string corresponde ao padrão desejado.
+```python
+Pattern.match(string [, pos[, endpos]])
+```
+
+Verifica se toda a string corresponde com o padrão desejado.
+```python
+Pattern.fullmatch(string [, pos[, endpos]])
+```
+
+Divide a string no padrão considerado:
+```python
+Pattern.split(string, maxsplit=0)
+```
+O resultado é algo como:
+```python
+['string-anterior', 'pattern', 'string-apos']
+```
+
+Retorna uma lista de strings que correspondem ao padrão.
+```python
+Pattern.findall(string [, pos[, endpos]])
+```
+
+Retorna uma iterador com os objetos *matches*.
+```python
+Pattern.finditer(string [, pos[, endpos]])
+```
+
+Retorna uma nova string substituindo as conrrespodencias pelo conteúdo de `repl`
+```python
+Pattern.sub(repl, string, count=0)
+```
+
+Além de retornar uma nova string, também retorna a quantidade de vezes que a substituição foi realizada.
+```python
+Pattern.subn(repl, string, count=0)
+```
+
+Atributos:
+```python
 Pattern.flags
+```
 
+```python
 Pattern.groups
+```
 
+```python
 Pattern.groupindex
+```
 
-Pattern.pattern -> string that was compiled
+Indica a string ou padrão compilado.
+```python
+Pattern.pattern
+```
+
+## *Scanner object*
+```python
+scanner.match()
+scanner.search()
+scanner.pattern
+```
+
+## Correspondência (*Match object*)
+
+Objeto que indica uma correspondência.
+```python
+<re.Match object; span=(5, 11), match='RegExr'>
+```
+
+Retorna a (sub)string correspondente a um grupo:
+```python
+match.group()
+```
+Pode existir diversos grupos dentro de uma correspondência e esses grupos são identificados por números inteiros.
+
+Retorna a posição inicial da correspondência:
+```python
+match.start()
+```
+
+Retorna a posição final da correspondência:
+```python
+match.end()
+```
+
+Retorna uma tupla indicando a posição inicial e final de uma correspondência:
+```python
+match.span()
+```
+
+```python
+match.groups()
+```
+
+```python
+match.groupdict()
+```
+
+## The backslash plague
+
+Leia o artigo *The Backslash Plague* nesse [link](https://docs.python.org/3/howto/regex.html#the-backslash-plague).
 
 
-## Match Object
+## Exemplos de expressões regulares
 
-group() -> retorna a string
-
-start() -> retorna a posição inicial
-
-end() -> retorna a posição final
-
-span() -> retorna uma tupla com a posição inicial e final
-
-Evitar **'The Backslash Plague'** utilizar raw string in python: r'/parttner/'
-
-
-## Examples
-
-...
-
-## References
-
-[REGULAR EXPRESSION How To](https://docs.python.org/3/howto/regex.html#regex-howto)
-
-[Regular Expression module](https://docs.python.org/3/library/re.html)
-
-[Regular Expression Test Online](https://regexr.com/)
+Outros exemplos podem ser vistos neste
+[notebook](https://colab.research.google.com/drive/1FDYFdDqUTtVyUGg7WTZTT0lgBnwda7cw?usp=sharing) em Google Collaboratory
