@@ -1,0 +1,1197 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Strings - Quick References</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#strings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quick References" class="md-header__button md-logo" aria-label="Quick References" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quick References
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Strings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git-version/" class="md-tabs__link">
+        Git version
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../others/" class="md-tabs__link">
+      Others
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quick References" class="md-nav__button md-logo" aria-label="Quick References" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Quick References
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Python</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beautiful-soap/" class="md-nav__link">
+        Beautiful Soap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        Conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decorator/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter/" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pickle/" class="md-nav__link">
+        Pickle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytest/" class="md-nav__link">
+        Pytest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular-expression/" class="md-nav__link">
+        Regular expressions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Strings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Strings
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-ans-slice" class="md-nav__link">
+    Indexing ans Slice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores" class="md-nav__link">
+    Operadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-functions" class="md-nav__link">
+    Built-in functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolacao" class="md-nav__link">
+    Interpolação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    Case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-and-replace" class="md-nav__link">
+    Find and Replace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-string-and-iterables" class="md-nav__link">
+    Converting between string and iterables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bytes-object" class="md-nav__link">
+    Bytes Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constantes-interessantes-do-modulo-string" class="md-nav__link">
+    Constantes interessantes do modulo string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting_1" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-mental-game-of-python/" class="md-nav__link">
+        Mental Game
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../linux/">Linux</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/process/" class="md-nav__link">
+        Processes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../git-version/">Git version</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Git version" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git version
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-ans-slice" class="md-nav__link">
+    Indexing ans Slice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores" class="md-nav__link">
+    Operadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-functions" class="md-nav__link">
+    Built-in functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolacao" class="md-nav__link">
+    Interpolação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    Case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-and-replace" class="md-nav__link">
+    Find and Replace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-between-string-and-iterables" class="md-nav__link">
+    Converting between string and iterables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bytes-object" class="md-nav__link">
+    Bytes Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constantes-interessantes-do-modulo-string" class="md-nav__link">
+    Constantes interessantes do modulo string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting_1" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="strings">Strings</h1>
+<p>Strings são tantos objetos built-in como também existe um módulo <code>string</code>.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
+</code></pre></div></p>
+<p>Documentação oficial:
+- <a href="https://docs.python.org/3/library/string.html">string module</a></p>
+<h2 id="indexing-ans-slice">Indexing ans Slice</h2>
+<p>Indexing
+<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+Slicing
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">:</span> <span class="n">end</span> <span class="p">:</span> <span class="n">step</span><span class="p">]</span>
+</code></pre></div></p>
+<p>Para reverter uma string:
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></p>
+<h2 id="operadores">Operadores</h2>
+<div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">+</span> <span class="n">bar</span>
+
+<span class="n">foo</span> <span class="o">*</span> <span class="mi">5</span>
+
+<span class="s1">&#39;z&#39;</span> <span class="ow">in</span> <span class="s1">&#39;abc&#39;</span>
+<span class="s1">&#39;z&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;xyz&#39;</span>
+</code></pre></div>
+<h2 id="built-in-functions">Built-in functions</h2>
+<p>Converte um inteiro em um caracter
+<div class="highlight"><pre><span></span><code><span class="nb">chr</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</code></pre></div>
+Converte um caracter em um inteiro:
+<div class="highlight"><pre><span></span><code><span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+</code></pre></div>
+Tamanho de uma string
+<div class="highlight"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</code></pre></div>
+Converte um objeto em uma string correspondente. Ver também <code>__str__</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">str</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># &#39;90&#39;</span>
+</code></pre></div></p>
+<h2 id="interpolacao">Interpolação</h2>
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">prod</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">m</span>
+
+<span class="sa">f</span><span class="s1">&#39;The product of </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">prod</span><span class="si">}</span><span class="s1">&#39;</span>
+</code></pre></div>
+<h2 id="case">Case</h2>
+<div class="highlight"><pre><span></span><code><span class="n">foo</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="find-and-replace">Find and Replace</h2>
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="o">&lt;</span><span class="n">suffix</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="o">&lt;</span><span class="n">prefix</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span><span class="p">]])</span>
+</code></pre></div>
+<h2 id="classification">Classification</h2>
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span> <span class="c1"># is alphanumeric ?</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">()</span> <span class="c1"># is a valid python identifier ?</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isprintable</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="c1"># \n \t \r</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="formatting">Formatting</h2>
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">fill</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="n">tabsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># replace \t by white space</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">fill</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">([</span><span class="o">&lt;</span><span class="n">chars</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">fill</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">([</span><span class="o">&lt;</span><span class="n">chars</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="p">)</span> <span class="c1"># pads a string on the left with zeros</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">&lt;</span><span class="n">old</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">new</span><span class="o">&gt;</span><span class="p">[,</span> <span class="o">&lt;</span><span class="n">count</span><span class="o">&gt;</span><span class="p">])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">([</span><span class="o">&lt;</span><span class="n">chars</span><span class="o">&gt;</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="converting-between-string-and-iterables">Converting between string and iterables</h2>
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">&lt;</span><span class="n">iterable</span><span class="o">&gt;</span><span class="p">)</span>
+    <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="s1">&#39;qux&#39;</span><span class="p">])</span>
+    <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;corge&#39;</span><span class="p">)</span> <span class="c1"># results &#39;c:o:r:g:e&#39;</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="o">&lt;</span><span class="n">separator</span><span class="o">&gt;</span><span class="p">)</span> <span class="c1"># divides a string based on a separator. Retorna uma tupla</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># splits a string into a list of substring</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">splitlines</span><span class="p">([</span><span class="n">keepends</span><span class="p">])</span> <span class="c1"># | True or 1</span>
+</code></pre></div>
+<h2 id="bytes-object">Bytes Object</h2>
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;foo bar baz&#39;</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">bytes</span><span class="p">(</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">encoding</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="s1">&#39;foo.bar&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8)</span>
+
+<span class="nb">bytes</span><span class="p">(</span><span class="o">&lt;</span><span class="n">size</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="constantes-interessantes-do-modulo-string">Constantes interessantes do modulo <code>string</code></h2>
+<p>Alfabeto ASCII
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span>
+
+<span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+<span class="c1"># &#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+
+<span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+<span class="c1"># &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+</code></pre></div></p>
+<p>Números:
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">.</span><span class="n">digits</span>
+<span class="c1"># &#39;0123456789&#39;</span>
+</code></pre></div></p>
+<p>Pontuação:
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+<span class="c1"># !&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</span>
+</code></pre></div></p>
+<p>Outras bases numéricas:
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">.</span><span class="n">hexdigits</span>
+<span class="c1"># &#39;0123456789abcdefABCDEF&#39;.</span>
+
+<span class="n">string</span><span class="o">.</span><span class="n">octdigits</span>
+<span class="c1"># &#39;01234567&#39;</span>
+</code></pre></div></p>
+<p>ASCII caracteres considerados espaços em branco:
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="o">.</span><span class="n">whitespace</span>
+<span class="c1"># &#39; \t\n\r\x0b\x0c&#39;</span>
+</code></pre></div></p>
+<h2 id="formatting_1">Formatting</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Formatter</span>
+</code></pre></div>
+<h2 id="references">References</h2>
+<p>Real Python: <a href="https://realpython.com/python-strings/">Strings and Characters Data in Python</a> Acessado em &lt;18/07/2018&gt;</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../regular-expression/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Regular expressions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Regular expressions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../the-mental-game-of-python/" class="md-footer__link md-footer__link--next" aria-label="Next: Mental Game" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Mental Game
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

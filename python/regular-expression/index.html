@@ -1,0 +1,1223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Regular expressions - Quick References</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regular-expression" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quick References" class="md-header__button md-logo" aria-label="Quick References" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quick References
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Regular expressions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git-version/" class="md-tabs__link">
+        Git version
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../others/" class="md-tabs__link">
+      Others
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quick References" class="md-nav__button md-logo" aria-label="Quick References" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Quick References
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Python</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beautiful-soap/" class="md-nav__link">
+        Beautiful Soap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        Conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decorator/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter/" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pickle/" class="md-nav__link">
+        Pickle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytest/" class="md-nav__link">
+        Pytest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Regular expressions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Regular expressions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#meta-caracteres" class="md-nav__link">
+    Meta caracteres:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteres-especiais" class="md-nav__link">
+    Caracteres especiais
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conjuntos-pre-definidos" class="md-nav__link">
+    Conjuntos pré-definidos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indicando-repeticoes" class="md-nav__link">
+    Indicando repetições
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-level-functions" class="md-nav__link">
+    Module-Level Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padrao-pattern-object" class="md-nav__link">
+    Padrão (Pattern object)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanner-object" class="md-nav__link">
+    Scanner object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correspondencia-match-object" class="md-nav__link">
+    Correspondência (Match object)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-backslash-plague" class="md-nav__link">
+    The backslash plague
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-expressoes-regulares" class="md-nav__link">
+    Exemplos de expressões regulares
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        Strings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-mental-game-of-python/" class="md-nav__link">
+        Mental Game
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../linux/">Linux</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/process/" class="md-nav__link">
+        Processes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../git-version/">Git version</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Git version" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git version
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#meta-caracteres" class="md-nav__link">
+    Meta caracteres:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteres-especiais" class="md-nav__link">
+    Caracteres especiais
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conjuntos-pre-definidos" class="md-nav__link">
+    Conjuntos pré-definidos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indicando-repeticoes" class="md-nav__link">
+    Indicando repetições
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-level-functions" class="md-nav__link">
+    Module-Level Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padrao-pattern-object" class="md-nav__link">
+    Padrão (Pattern object)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanner-object" class="md-nav__link">
+    Scanner object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correspondencia-match-object" class="md-nav__link">
+    Correspondência (Match object)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-backslash-plague" class="md-nav__link">
+    The backslash plague
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-expressoes-regulares" class="md-nav__link">
+    Exemplos de expressões regulares
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="regular-expression">Regular expression</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
+<p>Documentação oficial:
+- <a href="https://docs.python.org/3/library/re.html">re module documentation</a></p>
+<p>See also:
+- <a href="https://docs.python.org/3/howto/regex.html#regex-howto">re : How To</a>
+- <a href="https://en.wikipedia.org/wiki/Regular_expression">Wikipedia: Regular expression</a>
+- <a href="https://regexr.com/">Untitled Pattern</a></p>
+<h2 id="meta-caracteres">Meta caracteres:</h2>
+<blockquote>
+<p>''' . ^ $ * + ? { } [ ] \ | ( ) '''</p>
+</blockquote>
+<ul>
+<li>
+<p><code>[ ]</code> (conjunto) define um conjunto de caracteres. Exemplos [abc] [a-c] [0-9]. Metacaracteres dentro de um conjunto são tomados como caracteres normais. Ver: <code>[^ ]</code>;</p>
+</li>
+<li>
+<p><code>( )</code> (grupo) define um grupo;</p>
+</li>
+<li>
+<p><code>[^ ]</code> (negação) indica negação, exceção ou complemento. Por exemplo, <code>[^5]</code> encontra qualquer caracter exceto 5;</p>
+</li>
+<li>
+<p><code>\</code> (backslash) ou escape. Pode representar conjuntos predefinidos, quando seguido por uma letra;</p>
+</li>
+<li>
+<p><code>.</code> (ponto) corresponde a qualquer caractere, exceto new line <code>\n</code>. Corresponde a <code>re.DOTALL</code>;</p>
+</li>
+<li>
+<p><code>^</code> (inicio) identifica um padrão no início da string.</p>
+</li>
+<li>
+<p><code>$</code> (final) identifica um padrão no final da string.</p>
+</li>
+<li>
+<p><code>|</code> (ou... ou...) expressa uma alternativa</p>
+</li>
+</ul>
+<h2 id="caracteres-especiais">Caracteres especiais</h2>
+<ul>
+<li><code>\n</code> : new line</li>
+<li><code>\t</code> : tab space</li>
+<li><code>\r</code> :</li>
+<li><code>\f</code> :</li>
+<li><code>\v</code> :</li>
+</ul>
+<h2 id="conjuntos-pre-definidos">Conjuntos pré-definidos</h2>
+<ul>
+<li>
+<p><code>\d</code> equivale a <code>[0-9]</code></p>
+</li>
+<li>
+<p><code>\D</code> equivale a <code>[^0-9]</code></p>
+</li>
+<li>
+<p><code>\s</code> equivale a <code>[\t\n\r\f\v]</code></p>
+</li>
+<li>
+<p><code>\S</code> equivale a <code>[^\t\n\r\f\v]</code> white space character</p>
+</li>
+<li>
+<p><code>\w</code> equivale a <code>[a-zA-Z0-9_]</code></p>
+</li>
+<li>
+<p><code>\W</code> equivale a <code>[^a-zA-Z0-9_]</code></p>
+</li>
+</ul>
+<p>Podem ser incluídos dentro de uma classe ou conjunto, por exemplo, [\s,.]</p>
+<h2 id="indicando-repeticoes">Indicando repetições</h2>
+<ul>
+<li>
+<p><code>{m, n}</code> minímo de <code>m</code> e máximo de <code>n</code> repetições.</p>
+</li>
+<li>
+<p><code>*</code> equivale a zero ou mais repetições de uma classe. Equivalente a <code>{0,}</code></p>
+</li>
+<li>
+<p><code>+</code> equivale a 1 ou mais repetições, isto é, <code>{1,}</code></p>
+</li>
+<li>
+<p><code>?</code> equivale a 0 ou 1 repetições:  <code>{0,1}</code></p>
+</li>
+<li>
+<p><code>{n}</code> exatamente <code>n</code> repetições</p>
+</li>
+</ul>
+<h2 id="module-level-functions">Module-Level Functions</h2>
+<p>Compile uma padrão em um objeto que pode ser reusado.
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">*</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Flags
+<div class="highlight"><pre><span></span><code>    <span class="n">re</span><span class="o">.</span><span class="n">ASCII</span>      <span class="ow">or</span> <span class="n">re</span><span class="o">.</span><span class="n">A</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="ow">or</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>  <span class="ow">or</span> <span class="n">re</span><span class="o">.</span><span class="n">M</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span>     <span class="ow">or</span> <span class="n">re</span><span class="o">.</span><span class="n">S</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span>    <span class="ow">or</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">LOCALE</span>  <span class="c1">#</span>
+    <span class="n">re</span><span class="o">.</span><span class="n">DEBUG</span>   <span class="c1"># display debug information</span>
+</code></pre></div></p>
+<blockquote>
+<p>É possível combinar flags com o operador <code>|</code></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>Verifica toda a string por uma correspondência. Retorna um objeto match para a primeira ocorrência. Retorna um objeto <code>match</code>.
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">str_pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Verifica o início da string por uma correspondência. Retorna um objeto <code>match</code>.
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">str_pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Verifica se toda a string corresponde ao padrão desejado. Retorna um objeto <code>match</code>.
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">str_pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Divide uma <code>string</code> de acordo com o padrão desejado:
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Retorna uma lista de palavras que correspondem ao padrão desejado:
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Retornar um objeto iterável com os matches da string:
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Substituir um padrão por uma outra expressão em uma string.
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+Onde:
+- <code>pattern</code> pode ser uma string ou um Pattern Object
+- <code>repl</code> pode ser uma nova string ou uma função
+- <code>string</code> é a string onde será feita a substituição
+- <code>count</code> é o número máximo de substituições</p>
+<p>Se <code>repl</code> é uma função, ela recebe um <em>match object</em>:
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">dashrepl</span><span class="p">(</span><span class="n">matchobj</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="n">matchobj</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39; &#39;</span>
+<span class="o">...</span>     <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;-&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;-{1,2}&#39;</span><span class="p">,</span> <span class="n">dashrepl</span><span class="p">,</span> <span class="s1">&#39;pro----gram-files&#39;</span><span class="p">)</span>
+<span class="s1">&#39;pro--gram files&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\sAND\s&#39;</span><span class="p">,</span> <span class="c1"># pattern</span>
+            <span class="s1">&#39; &amp; &#39;</span><span class="p">,</span>     <span class="c1"># repl</span>
+            <span class="s1">&#39;Baked Beans And Spam&#39;</span><span class="p">,</span>  <span class="c1"># string</span>
+            <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="s1">&#39;Baked Beans &amp; Spam&#39;</span>
+</code></pre></div></p>
+<p>Já <code>re.subn</code> perfoma a mesma operação que <code>re.sub</code> porém returna uma tupla indicando a nova string e o número de substituições: <code>(new_string, number_of_subs_made)</code>
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Adiciona <code>\</code> (<em>backslash</em>) para caracteres especiais:
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s1">&#39;https://www.python.org&#39;</span><span class="p">)</span>
+<span class="c1"># https://www\.python\.org</span>
+</code></pre></div></p>
+<p>Limpar o cache de expressões regulares. Por que eu iria fazer isso?
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">purge</span><span class="p">()</span>
+</code></pre></div></p>
+<h2 id="padrao-pattern-object">Padrão (<em>Pattern object</em>)</h2>
+<p>Compila uma expressão regular em um objeto que pode ser reusado.
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+<span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+</code></pre></div>
+Verifica toda a string e retorna a primeira ocorrência.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">string</span> <span class="p">[,</span> <span class="n">pos</span><span class="p">[,</span> <span class="n">endpos</span><span class="p">]])</span>
+</code></pre></div>
+Onde:
+- <code>pos</code> indica o indice da posição inicial</p>
+<p>Verifica se o início da (sub)string corresponde ao padrão desejado.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">string</span> <span class="p">[,</span> <span class="n">pos</span><span class="p">[,</span> <span class="n">endpos</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>Verifica se toda a string corresponde com o padrão desejado.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">string</span> <span class="p">[,</span> <span class="n">pos</span><span class="p">[,</span> <span class="n">endpos</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>Divide a string no padrão considerado:
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+O resultado é algo como:
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s1">&#39;string-anterior&#39;</span><span class="p">,</span> <span class="s1">&#39;pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;string-apos&#39;</span><span class="p">]</span>
+</code></pre></div></p>
+<p>Retorna uma lista de strings que correspondem ao padrão.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">string</span> <span class="p">[,</span> <span class="n">pos</span><span class="p">[,</span> <span class="n">endpos</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>Retorna uma iterador com os objetos <em>matches</em>.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">string</span> <span class="p">[,</span> <span class="n">pos</span><span class="p">[,</span> <span class="n">endpos</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>Retorna uma nova string substituindo as conrrespodencias pelo conteúdo de <code>repl</code>
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Além de retornar uma nova string, também retorna a quantidade de vezes que a substituição foi realizada.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Atributos:
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">flags</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">groups</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">groupindex</span>
+</code></pre></div>
+<p>Indica a string ou padrão compilado.
+<div class="highlight"><pre><span></span><code><span class="n">Pattern</span><span class="o">.</span><span class="n">pattern</span>
+</code></pre></div></p>
+<h2 id="scanner-object"><em>Scanner object</em></h2>
+<div class="highlight"><pre><span></span><code><span class="n">scanner</span><span class="o">.</span><span class="n">match</span><span class="p">()</span>
+<span class="n">scanner</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+<span class="n">scanner</span><span class="o">.</span><span class="n">pattern</span>
+</code></pre></div>
+<h2 id="correspondencia-match-object">Correspondência (<em>Match object</em>)</h2>
+<p>Objeto que indica uma correspondência.
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">re</span><span class="o">.</span><span class="n">Match</span> <span class="nb">object</span><span class="p">;</span> <span class="n">span</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">match</span><span class="o">=</span><span class="s1">&#39;RegExr&#39;</span><span class="o">&gt;</span>
+</code></pre></div></p>
+<p>Retorna a (sub)string correspondente a um grupo:
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</code></pre></div>
+Pode existir diversos grupos dentro de uma correspondência e esses grupos são identificados por números inteiros.</p>
+<p>Retorna a posição inicial da correspondência:
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div></p>
+<p>Retorna a posição final da correspondência:
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</code></pre></div></p>
+<p>Retorna uma tupla indicando a posição inicial e final de uma correspondência:
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="the-backslash-plague">The backslash plague</h2>
+<p>Leia o artigo <em>The Backslash Plague</em> nesse <a href="https://docs.python.org/3/howto/regex.html#the-backslash-plague">link</a>.</p>
+<h2 id="exemplos-de-expressoes-regulares">Exemplos de expressões regulares</h2>
+<p>Outros exemplos podem ser vistos neste
+<a href="https://colab.research.google.com/drive/1FDYFdDqUTtVyUGg7WTZTT0lgBnwda7cw?usp=sharing">notebook</a> em Google Collab.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../random/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Random" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Random
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../string/" class="md-footer__link md-footer__link--next" aria-label="Next: Strings" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Strings
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
