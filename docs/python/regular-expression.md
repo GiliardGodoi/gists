@@ -286,4 +286,4 @@ Leia o artigo *The Backslash Plague* nesse [link](https://docs.python.org/3/howt
 ## Exemplos de expressões regulares
 
 Outros exemplos podem ser vistos neste
-[notebook](https://colab.research.google.com/drive/1FDYFdDqUTtVyUGg7WTZTT0lgBnwda7cw?usp=sharing) em Google Collaboratory
+[notebook](https://colab.research.google.com/drive/1FDYFdDqUTtVyUGg7WTZTT0lgBnwda7cw?usp=sharing) em Google Collab.
